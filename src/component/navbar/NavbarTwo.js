@@ -3,8 +3,6 @@ import { Link, NavLink } from 'react-router-dom'
 import Button from '@mui/material/Button';
 import "../../css/Navbar.css"
 
-
-
 function NavbarOne() {
 
     return (

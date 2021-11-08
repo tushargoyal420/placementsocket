@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import './App.css';
+// import './App.css';
 import { Route, Switch } from 'react-router';
 import "./css/GlobalStyle.css"
 import { AuthContext } from "./firebase/auth";

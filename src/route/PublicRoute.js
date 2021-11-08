@@ -4,8 +4,8 @@ import { Redirect, Route, Switch } from 'react-router';
 import Home from '../component/Home';
 import About from '../component/About';
 import Contact from '../component/Contact';
-import Signup from '../component/Signup';
-import Signin from '../component/Signin';
+import Signup from '../component/public/Signup';
+import Signin from '../component/public/Signin';
 
 function PublicRoute() {
     return (

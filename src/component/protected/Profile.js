@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Redirect } from "react-router-dom";
-import { AuthContext } from "../firebase/auth";
-import firebase from "../firebase/firebase";
+import { AuthContext } from "../../firebase/auth";
+import firebase from "../../firebase/firebase";
 
 
 function Dashboard() {
@@ -15,7 +15,7 @@ function Dashboard() {
             <p>This is the profile, if you can see this you're logged in.</p>
             <button onClick={() => firebase.auth().signOut()}>Sign out</button>
         </div>
-    )
+    ) 
 }
 
 export default Dashboard

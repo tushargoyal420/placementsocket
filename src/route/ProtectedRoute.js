@@ -4,7 +4,7 @@ import NavbarTwo from '../component/navbar/NavbarTwo';
 import Home from '../component/Home';
 import About from '../component/About';
 import Contact from '../component/Contact';
-import Profile from '../component/Profile';
+import Profile from '../component/protected/Profile';
 
 function ProtectedRoute() {
     return (
