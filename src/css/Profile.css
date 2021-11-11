@@ -1,0 +1,63 @@
+.profileRowSectionOne{
+    width: 100%;
+    /* padding: 0px 50px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.profileUserNameDiv .userName {
+    font-size: 4vh;
+    font-weight: 700;
+}
+.profileUserNameDiv ul {
+    padding: 10px 0px 10px 10px;
+    font-size: 2.7vh;
+    list-style: square;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.profileUserNameDiv ul li {
+    line-height: 30px;
+}
+
+
+.profileImageDiv {
+    width: 200px;
+    background-color: rgb(163, 163, 163);
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 100%;
+}
+
+.profileImage {
+    height: 100%;
+}
+.profileRowSectionDetails{
+    
+}
+.profileRowSectionDetails .details ul{
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+
+.profileRowSectionDetails .details ul li{
+    list-style-type: square;
+    margin-left: 25px;
+}
+
+.profileRowSectionDetails .detailsHeading{
+    font-size: 3.5vh;
+    margin-bottom: 20px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+

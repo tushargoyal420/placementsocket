@@ -1,8 +1,52 @@
-*{
+* {
+    -webkit-font-smoothing: antialiased;
     margin: 0;
     padding: 0;
-    font-family: 'Titillium Web', sans-serif;}
+    font-family: 'Titillium Web', sans-serif;
+    font-smooth: always;
+    font-smooth: 2em;
+}
 
-    .colorChange{
-        color:#1976d2;
-    }
+.colorChange {
+    /* color: black; */
+    color: #1976d2;
+}
+
+.backgroundPage {
+    background-color: #ebeff1;
+    min-height: calc(100vh - 133px);
+}
+
+.paraFirstbigText {
+    font-size: 3.8vh;
+    font-weight: 600;
+    margin-left: 50px;
+}
+.heading1{
+    font-size: 4vh;
+    font-weight: 700;
+    margin: 20px 0px 40px 0px;
+}
+.rowsectionContent{
+    width: 90%;
+    margin: auto;
+}
+
+.partitionLine{
+    height: 1px;
+    min-width: 20px;
+    margin: 30px 10px;
+    border-radius: 100%;
+    box-shadow: 0px 1px 5px 0.4px grey;
+    background-color: black;   
+}
+.partitionHeading{
+    font-size: 3.0vh;
+    font-weight: 600;
+    margin: 20px 0px 10px 0px;
+}
+.partitionHeadingtwo{
+    font-size: 2.0vh;
+    font-weight: 500;
+    margin: 15px 0px 0px 0px;
+}

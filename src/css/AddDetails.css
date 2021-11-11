@@ -1,0 +1,28 @@
+.rowSection .detailsForm {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    
+}.rowSection .detailsForm .detailsSection {
+    display: flex;
+    width: 100%;    
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    justify-content: space-around;
+    /* max-width: 40%; */
+    align-items: flex-start;
+}
+
+
+.rowSection .detailsForm .detailsSection .textField {
+    /* flex-basis: 50%; */
+    margin: 10px 0px;
+    min-width: 200px;
+}
+
+.rowSection .detailsForm .submitButton{
+    margin-top: 30px;
+    height: 50px;
+    font-size: 2.6vh;
+    text-transform: capitalize;
+}

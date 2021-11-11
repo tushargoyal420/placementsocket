@@ -2,23 +2,27 @@
     display: flex;
     justify-content: right;
 }
+.logoImage{
+    /* background-color: red; */
+    width: 220px;
+}
 .tocenter{
     align-items: center;   
 }
-#signupbut{
+#onlyBorderButton{
     margin: 0px 10px;
     text-transform: capitalize;
     color: white;
     border-color: white;
 }
-#signupbut:hover{
+#onlyBorderButton:hover{
     border-color: #1976d2;
     color: #1976d2;
 }
-#signinbut{
+#withBackgroundButton{
     margin: 0px 5px;
     text-transform: capitalize;
 }    
-#signinbut:hover{
+#withBackgroundButton:hover{
         color: white;
 }
