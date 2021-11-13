@@ -1,7 +1,10 @@
-import React from "react";
+import React
+// , { useEffect, useState } 
+from 'react'
 import "../../css/HomePage.css"
 
 function WelcomePage() {
+
     return (
         <div className="backgroundPage">
             <div className="heroSection">

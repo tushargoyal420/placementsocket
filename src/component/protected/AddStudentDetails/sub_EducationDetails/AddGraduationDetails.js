@@ -7,11 +7,11 @@ function AddGraduationDetails() {
     const degreeArray = [
         {
             label: "Post Graduate",
-            value: "Post_Graduate"
+            value: "Post Graduate"
         },
         {
             label: "Under Graduate",
-            value: "Under_Graduate"
+            value: "Under Graduate"
         },
         {
             label: "Diploma",
@@ -20,31 +20,31 @@ function AddGraduationDetails() {
     const courseArray = [
         {
             label: "Bachelor of Arts",
-            value: "Bachelor_of_Arts"
+            value: "Bachelor of Arts"
         },
         {
             label: "Bachelor of Science",
-            value: "Bachelor_of_Science"
+            value: "Bachelor of Science"
         },
         {
             label: "Bachelor of Technology",
-            value: "Bachelor_of_Technology"
+            value: "Bachelor of Technology"
         },
         {
             label: "Bachelor of Law",
-            value: "Bachelor_of_Law"
+            value: "Bachelor of Law"
         },
         {
             label: "Bachelor of Medicine ",
-            value: "Bachelor_of_Medicine"
+            value: "Bachelor of Medicine"
         },
         {
             label: "Bachelor of Computer Application",
-            value: "Bachelor_of_Computer_Application"
+            value: "Bachelor of Computer Application"
         },
         {
             label: "Not in this list?",
-            value: "notInList"
+            value: "not in the List"
         }]
 
     const monthArray = [
@@ -202,11 +202,11 @@ function AddGraduationDetails() {
                             <form className="detailsForm" onSubmit={submitDataa}>
                                 <div className="detailsSection">
                                     <TextField onChange={(e) => setDegree(e.target.value)} className="textField" select required="true"
-                                        style={{ minWidth: '200px' }} variant="standard" label="Degree" size="normal">{degreeArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
+                                        style={{ minWidth: '200px' }} variant="standard"value={degree} label="Degree" size="normal">{degreeArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
 
                                     <TextField onChange={(e) => setCollege(e.target.value)} className="textField" id="standard-basic" label="College" variant="standard" />
                                     <TextField onChange={(e) => setCourse(e.target.value)} className="textField" select required="true"
-                                        style={{ minWidth: '200px' }} variant="standard" label="Course" size="normal">{courseArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
+                                        style={{ minWidth: '200px' }} variant="standard" label="Course" value={course} size="normal">{courseArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
 
                                     <TextField onChange={(e) => setStream(e.target.value)} className="textField" id="standard-basic" label="Stream" variant="standard" />
 
@@ -215,16 +215,16 @@ function AddGraduationDetails() {
                                     <TextField onChange={(e) => setActiveBacklogs(e.target.value)} className="textField" id="standard-number" label="Active Backlogs" variant="standard" />
                                     <TextField onChange={(e) => setRollNo(e.target.value)} className="textField" id="standard-basic" label="Roll no" variant="standard" />
                                     <TextField onChange={(e) => setStartingMonth(e.target.value)} className="textField" select required="true"
-                                        style={{ minWidth: '200px' }} variant="standard" label="Starting month" size="normal">{monthArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
+                                        style={{ minWidth: '200px' }} variant="standard" label="Starting month" value={startingMonth} size="normal">{monthArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
 
                                     <TextField onChange={(e) => setStartingYear(e.target.value)} className="textField" select required="true"
-                                        style={{ minWidth: '200px' }} variant="standard" label="Starting Year" size="normal">{yearArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
+                                        style={{ minWidth: '200px' }} variant="standard" label="Starting Year" value={startingYear} size="normal">{yearArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
 
                                     <TextField onChange={(e) => setEndingMonth(e.target.value)} className="textField" select required="true"
-                                        style={{ minWidth: '200px' }} variant="standard" label="Ending month" size="normal">{monthArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
+                                        style={{ minWidth: '200px' }} variant="standard" label="Ending month" value={endingMonth} size="normal">{monthArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
 
                                     <TextField onChange={(e) => setEndingYear(e.target.value)} className="textField" select required="true"
-                                        style={{ minWidth: '200px' }} variant="standard" label="Ending year" size="normal">{yearArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
+                                        style={{ minWidth: '200px' }} variant="standard" label="Ending year" value={endingYear} size="normal">{yearArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
                                 </div>
                                 <Button className='submitButton' type="submit" variant="contained" >Submit Details</Button>
                             </form>

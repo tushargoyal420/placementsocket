@@ -5,7 +5,8 @@ export const AuthContext = React.createContext();
 
 function loadingTimer(setLoading) {
   setTimeout(() => setLoading(false)
-    , 2000);
+    , 2);
+    // , 2000);
 }
 
 export const AuthProvider = ({ children }) => {

@@ -8,7 +8,6 @@ import firebase from '../../firebase/firebase'
 function NavbarTwo() {
 
     return (
-        <div classsName="n">
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
                     <NavLink exact to='/' className="navbar-brand">
@@ -42,7 +41,6 @@ function NavbarTwo() {
                 </div>
             </nav>
 
-        </div>
     )
 }
 

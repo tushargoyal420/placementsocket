@@ -13,19 +13,24 @@ function GetProfileHeadingDetails() {
         })
     return (
         <div>
-             {(data) ? (
-            <ul className="getDetails">
-                <li>
-                    <span className="value"> {data.userType} </span>
-                </li>
-                <li>
-                    <span className="value"> {data.SapId} </span>
-                </li>
-                <li>
-                    <span className="value"> {data.Email_address} </span>
-                </li>
-            </ul>
-             ):(
+            {(data) ? (
+                <>
+                    <div className="userName">{data.Name}</div>
+                    <ul className="profileUserDetailsList">
+                        <ul className="getDetails">
+                            <li>
+                                <span className="value"> {data.userType} </span>
+                            </li>
+                            <li>
+                                <span className="value"> {data.SapId} </span>
+                            </li>
+                            <li>
+                                <span className="value"> {data.Email_address} </span>
+                            </li>
+                        </ul>
+                    </ul>
+                </>
+            ) : (
                 <p> </p>
             )}
         </div>

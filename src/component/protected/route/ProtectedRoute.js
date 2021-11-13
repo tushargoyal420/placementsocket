@@ -5,10 +5,12 @@ import Home from '../../pages/Home';
 import About from '../../pages/About';
 import Contact from '../../pages/Contact';
 import Profile from '../Profile';
-import AddPersonalDetails from '../../small/StudentProfileDetails/AddPersonalDetails'
-import AddGraduationDetails from '../../small/StudentProfileDetails/sub_EducationDetails/AddGraduationDetails';
-import AddSeniorSecondaryDetails from '../../small/StudentProfileDetails/sub_EducationDetails/AddSeniorSecondaryDetails';
-import AddSecondaryDetails from '../../small/StudentProfileDetails/sub_EducationDetails/AddSecondaryDetails';
+import AddPersonalDetails from '../AddStudentDetails/AddPersonalDetails'
+import AddGraduationDetails from '../AddStudentDetails/sub_EducationDetails/AddGraduationDetails';
+import AddSeniorSecondaryDetails from '../AddStudentDetails/sub_EducationDetails/AddSeniorSecondaryDetails';
+import AddSecondaryDetails from '../AddStudentDetails/sub_EducationDetails/AddSecondaryDetails';
+import AddInternshipDetails from '../AddStudentDetails/AddInternshipDetails'
+import AddTechnicalSkills from '../AddStudentDetails/AddTechnicalSkills';
 
 function ProtectedRoute() {
     return (
@@ -23,6 +25,8 @@ function ProtectedRoute() {
                 <Route exact path="/addGraduationDetails" component={AddGraduationDetails} />
                 <Route exact path="/addSeniorSecondaryDetails" component={AddSeniorSecondaryDetails} />
                 <Route exact path="/addSecondaryDetails" component={AddSecondaryDetails} />
+                <Route exact path="/addInternshipDetails" component={AddInternshipDetails} />
+                <Route exact path="/addTechnicalSkills" component={AddTechnicalSkills} />
             </Switch>
         </div>
     )

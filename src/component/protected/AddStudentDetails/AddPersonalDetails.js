@@ -36,6 +36,7 @@ function AddPersonalDetails() {
             value: "ST"
         }]
 
+    const [name, setName] = useState("");
     const [dateOfBirth, setDateOfBirth] = useState("");
     const [gender, setGender] = useState("");
     const [category, setCategory] = useState("");
@@ -81,6 +82,7 @@ function AddPersonalDetails() {
 
         try {
             firebase.database().ref("data").child('student').child(userId).child('personalDetails').set({
+                'Name': name,
                 'Date_of_Birth': dateOfBirth,
                 'Gender': gender,
                 'Category': category,
@@ -137,9 +139,10 @@ function AddPersonalDetails() {
                         <section className="rowSection">
                             <form className="detailsForm" onSubmit={submitDataa}>
                                 <div className="detailsSection">
+                                    <TextField onChange={(e) => setName(e.target.value)} className="textField" id="standard-basic" type="text" label="Name" variant="standard" />
                                     <TextField onChange={(e) => setDateOfBirth(e.target.value)} className="textField" id="standard-number" type="date" label="Date of Birth" variant="standard" InputLabelProps={{ shrink: true, }} />
-                                    <TextField onChange={(e) => setGender(e.target.value)} className="textField" select required="true" style={{ minWidth: '200px' }} variant="standard" label="Gender" size="normal">{genderArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
-                                    <TextField onChange={(e) => setCategory(e.target.value)} className="textField" select required="true" style={{ minWidth: '200px' }} variant="standard" label="Category" size="normal">{categoryArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
+                                    <TextField onChange={(e) => setGender(e.target.value)} className="textField" select required="true" style={{ minWidth: '200px' }} variant="standard" value={gender} label="Gender" size="normal">{genderArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
+                                    <TextField onChange={(e) => setCategory(e.target.value)} className="textField" select required="true" style={{ minWidth: '200px' }} variant="standard" value={category} label="Category" size="normal">{categoryArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
                                     <TextField onChange={(e) => setPanCard(e.target.value)} className="textField" id="standard-basic" label="Pan Card" variant="standard" />
                                     <TextField onChange={(e) => setAadharCard(e.target.value)} className="textField" id="standard-basic" label="Aadhar Card number" variant="standard" />
                                     <TextField onChange={(e) => setSapId(e.target.value)} className="textField" id="standard-basic" label="SapID" variant="standard" />

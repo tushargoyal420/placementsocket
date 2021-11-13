@@ -15,36 +15,34 @@ function GetSeniorSecondaryDetails() {
     return (
         <div>
             {(data) ? (
-                <ul className="getDetails">
-                    <li>
-                        <span className="key"> School Name : </span>
-                        <span className="value"> {data.School_Name} </span>
-                    </li>
-                    <li>
-                        <span className="key"> Stream : </span>
-                        <span className="value"> {data.Stream} </span>
-                    </li>
-                    <li>
-                        <span className="key"> Board : </span>
-                        <span className="value"> {data.Board} </span>
-                    </li>
-                    <li>
-                        <span className="key"> Percentage : </span>
-                        <span className="value"> {data.Percentage} </span>
-                    </li>
-                    <li>
-                        <span className="key"> Starting_Year : </span>
-                        <span className="value"> {data.Starting_Year} </span>
-                    </li>
-                    <li>
-                        <span className="key"> Ending_Year : </span>
-                        <span className="value"> {data.Ending_Year} </span>
-                    </li>
-                    <li>
-                        <span className="key"> Type : </span>
-                        <span className="value"> {data.Type} </span>
-                    </li>
-                </ul>
+                <div className="dataBox">
+
+                    <ul className="getDetails">
+                        <div className="internshipHeader">
+                            <div className="organizationName">{data.School_Name}</div>
+                            <div> <span >({data.Starting_Year} </span>- <span >{data.Ending_Year})</span> </div>
+                        </div>
+                        <div className="secondBox">
+                            <div>
+                            <li>
+                                <span className="key"> Stream: </span>
+                                <span >{data.Stream} </span>
+                            </li>
+                            <li>
+                                <span className="key"> Board: </span>
+                                <span >{data.Board} </span>
+                            </li>
+                            <li>
+                                <span className="key"> Type: </span>
+                                <span className="value"> {data.Type} </span>
+                            </li>
+                            </div>
+                            <div className="percentage"> {data.Percentage}% </div>
+                        </div>
+
+                    </ul>
+                </div>
+
             ) : (
                 <p> Please fill your Details</p>
             )}

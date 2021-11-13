@@ -21,15 +21,15 @@ function AddSeniorSecondaryDetails() {
     const typeArray = [
         {
             label: "Full time",
-            value: "Full_time"
+            value: "Full time"
         },
         {
             label: "Open Board",
-            value: "Open_Board"
+            value: "Open Board"
         },
         {
             label: "Not in this list?",
-            value: "notInList"
+            value: "no in the List"
         }]
 
 
@@ -132,15 +132,15 @@ function AddSeniorSecondaryDetails() {
                                     <TextField onChange={(e) => setStream(e.target.value)} className="textField" id="standard-basic" label="Stream" variant="standard" />
 
                                     <TextField onChange={(e) => setBoard(e.target.value)} className="textField" select required="true"
-                                        style={{ minWidth: '200px' }} variant="standard" label="Board" size="normal">{boardArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
+                                        style={{ minWidth: '200px' }} variant="standard" label="Board" value={board} size="normal">{boardArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
                                     <TextField onChange={(e) => setPercentage(e.target.value)} className="textField" id="standard-basic" label="Percentage" variant="standard" />
                                     <TextField onChange={(e) => setStartingYear(e.target.value)} className="textField" select required="true"
-                                        style={{ minWidth: '200px' }} variant="standard" label="Starting Year" size="normal">{yearArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
+                                        style={{ minWidth: '200px' }} variant="standard" value={startingYear} label="Starting Year" size="normal">{yearArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
 
-                                    <TextField onChange={(e) => setEndingYear(e.target.value)} className="textField" select required="true"
+                                    <TextField onChange={(e) => setEndingYear(e.target.value)} value={endingYear} className="textField" select required="true"
                                         style={{ minWidth: '200px' }} variant="standard" label="Ending year" size="normal">{yearArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
                                     <TextField onChange={(e) => setType(e.target.value)} className="textField" select required="true"
-                                        style={{ minWidth: '200px' }} variant="standard" label="Type" size="normal">{typeArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
+                                        style={{ minWidth: '200px' }} variant="standard" value={type} label="Type" size="normal">{typeArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
                                 </div>
                                 <Button className='submitButton' type="submit" variant="contained" >Submit Details</Button>
                             </form>
