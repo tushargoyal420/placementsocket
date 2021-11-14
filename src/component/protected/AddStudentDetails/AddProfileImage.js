@@ -51,18 +51,6 @@ function AddProfileImage() {
 
 
             <Button onClick={popUp}>  Popup </Button>
-            <div className="forPopUp">
-                <p>dsc</p>
-                </div>
-                {(pop) ? (
-                    <div className="popUp">
-                        <p > This is Pop up</p>
-                        <Button onClick={close}>  Close</Button>
-                    </div>
-                ) : (
-                    <p></p>
-                )}
-
         </div>
     )
 }

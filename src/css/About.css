@@ -5,12 +5,11 @@
     justify-self: center;
     flex-direction: column;
     padding: 50px 0px;
-
 }
 
 .centerPageHeading {
     border-radius: 10px 10px 0px 0px;
-    box-shadow: 0px 3px 5px 1px grey;
+    box-shadow: 0px 3px 5px 1px rgba(128, 128, 128, 0.295);
     padding: 20px;
     text-align: center;
     font-size: 5vh;
@@ -28,9 +27,10 @@
     padding: 50px 80px;
     background-color: white;
     min-width: 100%;
-    box-shadow: 0px 3px 5px 1px grey;
-    text-align: justify;
+    /* box-shadow: 0px 3px 5px 1px grey; */
+    box-shadow: 0px 3px 5px 1px rgba(128, 128, 128, 0.295);
     line-height: 29px;
+    flex-wrap: wrap;
 }
 
 .centerWholePage ul {
@@ -50,10 +50,17 @@
 .rowSection {
     padding: 10px 0px;
 }
+.rowsectionContent {
+    text-align: justify;
+}
 
 .maps {
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+}
+.founderUnorderList{
+    display: flex;
+    flex-wrap: wrap;
 }

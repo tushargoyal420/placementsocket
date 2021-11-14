@@ -10,9 +10,6 @@ form{
     flex-wrap: wrap;
 }
 .contact_form{
-    
-    /* display: flex; */
-    /* flex-direction: column; */
     width: 80%;
     justify-content: center;
     align-items: center;
@@ -20,7 +17,9 @@ form{
 
 .contact_form .formcontrol{
     width: 40%;
-    padding: 15px 10px;
+    padding: 0px 10px;
+    margin-bottom: 15px;
+
 }
 .contact_form .bigFormcontrol{
     width: 80%;

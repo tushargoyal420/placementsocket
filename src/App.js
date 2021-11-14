@@ -5,6 +5,7 @@ import { AuthContext } from "./firebase/auth";
 import ProtectedRoute from "./component/protected/route/ProtectedRoute";
 import PublicRoute from "./component/protected/route/PublicRoute";
 import Footer from "./component/footer/Footer";
+import "./css/Responsive.css";
 
 function App(props) {
   const { currentUser } = useContext(AuthContext);
