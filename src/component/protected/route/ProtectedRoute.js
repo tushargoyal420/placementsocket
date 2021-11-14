@@ -11,10 +11,11 @@ import AddSeniorSecondaryDetails from '../AddStudentDetails/sub_EducationDetails
 import AddSecondaryDetails from '../AddStudentDetails/sub_EducationDetails/AddSecondaryDetails';
 import AddInternshipDetails from '../AddStudentDetails/AddInternshipDetails'
 import AddTechnicalSkills from '../AddStudentDetails/AddTechnicalSkills';
+import AddProfileImage from '../AddStudentDetails/AddProfileImage';
 
 function ProtectedRoute() {
     return (
-        <div>
+        <div className="protectedRoute">
             <NavbarTwo/>
             <Switch>
                 <Route exact path="/" component={Home} />
@@ -27,6 +28,7 @@ function ProtectedRoute() {
                 <Route exact path="/addSecondaryDetails" component={AddSecondaryDetails} />
                 <Route exact path="/addInternshipDetails" component={AddInternshipDetails} />
                 <Route exact path="/addTechnicalSkills" component={AddTechnicalSkills} />
+                <Route exact path="/addProfileImage" component={AddProfileImage} />
             </Switch>
         </div>
     )
