@@ -61,6 +61,8 @@
 .forPopUp {
     display: flex;
     position: fixed;
+    overflow-y: scroll;
+    padding: 60px 0px;
     z-index: 1;
     width: 100%;
     height: 100%;
@@ -71,48 +73,96 @@
 .popUp {
     padding: 2.5%;
     display: flex;
+    bottom: 10%;
     margin: auto;
-    /* align-content: center;
-    justify-content: center; */
     flex-direction: column;
-    height: 70%;
+    min-height: 70%;
     width: 70%;
-    border-radius:10px ;
+    border-radius: 10px;
     background-color: white;
     box-shadow: 0px 0px 10px 0.5px black;
 }
-.closeButtonBox{
+
+.popUp .topdiv {
     display: flex;
-    justify-content: flex-end;
-    /* background-color: red; */
+    text-align: center;
     height: 15%;
     padding: 1% 0px;
 }
-.imageBox{
+
+.popUp .headingText {
+    flex-basis: 90%;
+    font-size: 3.5vh;
+    font-weight: 600;
+
+}
+
+.popUp .closeButton {
+    flex-basis: 10%;
+}
+
+.imageBox {
     padding: 1% 0px;
     display: flex;
     justify-content: center;
     background-color: rgb(233, 233, 233);
     border-radius: 10px;
-    border: 3px dashed rgb(211, 210, 210) ;
+    border: 3px dashed rgb(211, 210, 210);
     height: 70%;
 }
-.submitButtonBox{
+
+.submitButtonBox {
     display: flex;
     justify-content: space-evenly;
     /* background-color:yellow; */
     height: 15%;
     padding: 1% 0px;
 }
-.closeButton{
+
+.closeButton {
     background-color: whitesmoke;
 }
-.selectImageDummy{
+
+.selectImageDummy {
     background-color: white;
     width: 30%;
     border-radius: 100%;
 }
-.imageCropPrview{
+
+.imageCropPrview {
     height: 100%;
     background-color: red;
+}
+
+.conentBox {
+    padding: 4vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(233, 233, 233, 0.39);
+    border-radius: 10px;
+}
+
+.textArea {
+    border: none;
+    outline: none;
+    padding: 2vh 1vh;
+}
+
+.toSingleLineForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.toSingleLineForm .textField {
+    margin: 10px 0px;
+    min-width: 80%;
+}
+
+.toSingleLineForm .submitButton {
+    margin: 10px 0px;
+    min-width: 80%;
+
 }

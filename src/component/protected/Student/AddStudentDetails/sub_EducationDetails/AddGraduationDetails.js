@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Button from '@mui/material/Button';
 import { MenuItem, TextField } from '@mui/material'
-import firebase from '../../../../firebase/firebase'
+import firebase from '../../../../../firebase/firebase'
 
 function AddGraduationDetails() {
     const degreeArray = [
@@ -202,9 +202,9 @@ function AddGraduationDetails() {
                             <form className="detailsForm" onSubmit={submitDataa}>
                                 <div className="detailsSection">
                                     <TextField onChange={(e) => setDegree(e.target.value)} className="textField" select required="true"
-                                        style={{ minWidth: '200px' }} variant="standard"value={degree} label="Degree" size="normal">{degreeArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
+                                        style={{ minWidth: '200px' }} variant="standard" value={degree} label="Degree" size="normal">{degreeArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
 
-                                    <TextField onChange={(e) => setCollege(e.target.value)} className="textField" id="standard-basic" label="College" variant="standard" />
+                                    <TextField onChange={(e) => setCollege(e.target.value)}  required="true" className="textField" id="standard-basic" label="College" variant="standard" />
                                     <TextField onChange={(e) => setCourse(e.target.value)} className="textField" select required="true"
                                         style={{ minWidth: '200px' }} variant="standard" label="Course" value={course} size="normal">{courseArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
 

@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import firebase from '../../../firebase/firebase';
+import React, { useEffect, useState } from 'react'
+import firebase from '../../../../firebase/firebase';
 
 function GetInternshipDetails() {
     const [data, setData] = useState([]);
-    // useEffect(() => {
+    useEffect(() => {
     const userId = firebase.auth().currentUser.uid;
     firebase.database().ref('data/student/' + userId + '/internshipORworK')
         .once('value').then((snapshot, index) => {
@@ -15,7 +15,7 @@ function GetInternshipDetails() {
         }).catch((err) => {
             alert(err)
         })
-    // }, []);
+    });
 
 
     return (
@@ -37,7 +37,7 @@ function GetInternshipDetails() {
                                 </li>
                                 <li>
                                     <span className="key"> Location : </span>
-                                    <span key={single.index}>{single.Location} Months</span>
+                                    <span key={single.index}>{single.Location}</span>
                                 </li>
                             </ul>
                         </div>

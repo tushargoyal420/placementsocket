@@ -12,11 +12,11 @@ function PublicRoute() {
         <div>
             <NavbarOne/>
             <Switch>
-                <Route exact path="/" component={Home} />
+                {/* <Route exact path="/" component={Home} /> */}
                 <Route exact path="/about" component={About} />
                 <Route exact path="/contact" component={Contact} />
                 <Route exact path="/signin" component={Signin} />
-                <Route exact path="/signup" component={Signup} />
+                <Route exact path="/" component={Signup} />
                 <Redirect to="/"/>
             </Switch>
         </div>

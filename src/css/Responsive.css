@@ -45,9 +45,11 @@
     .sigiInUpform .form {
         padding: 30px 10px;
     }
-
-    .sigiInUpform .radioButtons {
-        
+    /* profile */
+    .profileRowSectionOne{
+        justify-content: center;
+        align-items: center
+        ;
     }
 }
 

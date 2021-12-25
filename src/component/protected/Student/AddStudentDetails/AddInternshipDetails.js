@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Button from '@mui/material/Button';
 import { MenuItem, TextField } from '@mui/material'
-import firebase from '../../../firebase/firebase'
+import firebase from '../../../../firebase/firebase'
 
 
 function AddInternshipDetails() {
@@ -99,18 +99,13 @@ function AddInternshipDetails() {
                                     <TextField onChange={(e) => setOrganizationName(e.target.value)} className="textField" id="standard-basic" label="Organization Name" variant="standard" />
                                     <TextField onChange={(e) => setLocation(e.target.value)} className="textField" id="standard-basic" label="Location" variant="standard" />
                                     <TextField onChange={(e) => setDuration(e.target.value)} className="textField" id="standard-number" label="Duration(no. of Months)" variant="standard" />
+                                    <TextField onChange={(e) => setStartingMonth(e.target.value)} value={startingMonth} className="textField" select required style={{ minWidth: '200px' }} variant="standard" label="Starting Month" size="normal"> {monthArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
+                                    <TextField onChange={(e) => setEndingMonth(e.target.value)} className="textField" value={endingMonth} select required style={{ minWidth: '200px' }} variant="standard" label="Ending Month" size="normal">{monthArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
 
-                                    <TextField onChange={(e) => setStartingMonth(e.target.value)}  value={startingMonth} className="textField" select required
-                                        style={{ minWidth: '200px' }} variant="standard" label="Starting Month" size="normal">
-                                            {monthArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
-
-                                    <TextField onChange={(e) => setEndingMonth(e.target.value)} className="textField" value={endingMonth} select required
-                                        style={{ minWidth: '200px' }} variant="standard" label="Ending Month" size="normal">{monthArray.map((option) => (<MenuItem key={option.value} size="normal" value={option.value}> {option.label}</MenuItem>))}</TextField>
                                 </div>
                                 <Button className='submitButton' type="submit" variant="contained" >Submit Details</Button>
                             </form>
                         </section>
-
                     </div>
                 </ul>
             </div>

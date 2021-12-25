@@ -2,7 +2,7 @@ import React, {
     useState
     // , useContext 
 } from 'react'
-import { FormControl, Input, InputLabel } from '@mui/material';
+import { FormControl, Input, InputLabel,  } from '@mui/material';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
@@ -31,8 +31,8 @@ function Signin() {
     // const { currentUser } = useContext(AuthContext);
     const [currentUser, setCurrentUser] = useState(null);
 
-    const submitData = (event) => {
-        event.preventDefault();
+    const submitData = (e) => {
+        e.preventDefault();
         try {
             firebase.auth().signInWithEmailAndPassword(email, password)
                 .then((userCredential) => {
@@ -52,28 +52,30 @@ function Signin() {
     if (currentUser) {
         return <Redirect to="/" />;
     }
+   
     return (
         <div className="sigiInUpform">
-            <form className="form">
+            <form className="form" onSubmit={submitData}>
                 <div className="formHeading"> Sign <span className="colorChange"> In </span> </div>
-                <FormControl className="formcontrol">
-                    <InputLabel className="inputlabel"> Enter Email </InputLabel>
-                    <Input className="input" type="email" required onChange={(e) => setEmail(e.target.value)} />
+
+                <FormControl className="formcontrol" required="true">
+                    <InputLabel className="inputlabel"  > Enter Email </InputLabel>
+                    <Input className="input"required onChange={(e) => setEmail(e.target.value)} />
                 </FormControl>
-                <FormControl className="formcontrol">
+                <FormControl className="formcontrol" required="true">
                     <InputLabel className="inputlabel"> Enter Password </InputLabel>
                     <Input className="input" type="password" required onChange={event => setPassword(event.target.value)} />
                 </FormControl>
-                <FormControl component="fieldset">
-                    <RadioGroup row aria-label="gender" name="row-radio-buttons-group">
+                <FormControl component="fieldset" >
+                    <RadioGroup row aria-label="gender" defaultValue="Student" name="row-radio-buttons-group" >
                         <div className="radioButtons">
-                            <FormControlLabel value="female" control={<Radio />} label="Student" />
-                            <FormControlLabel value="male" control={<Radio />} label="Company" />
-                            <FormControlLabel value="other" control={<Radio />} label="College" />
+                            <FormControlLabel value="student" control={<Radio required={true} />} label="Student" />
+                            <FormControlLabel value="company" control={<Radio required={true} />} label="Company" />
+                            <FormControlLabel value="college" control={<Radio required={true} />} label="College" />
                         </div>
                     </RadioGroup>
                 </FormControl>
-                <Button style={butStyle} className='submitButton' variant="contained" onClick={submitData}>Submit</Button>
+                <Button style={butStyle} type="submit" className='submitButton' variant="contained" >Submit</Button>
 
                 <div className="formNavigation">
                     <span className="comentLine">Didn't have any account? </span>

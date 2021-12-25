@@ -1,0 +1,33 @@
+.AboutCompany {
+    display: flex;
+    flex-direction: column;
+}
+.AboutCompany .textField{
+    margin: 10px 0px 20px 0px;
+    /* border: 2px dashed rgb(211, 210, 210); */
+    outline: none; 
+    padding: 10px 0px;
+}
+.AboutCompany .ButtonDiv {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0px 0px 0px;
+}
+
+.AboutCompany .ButtonDiv .AboutComapnyButton {
+    width: 30%;
+}
+.aboutSection{
+    padding: 15px 20px;
+    text-align: justify;
+    font-size: 2.5vh;
+}
+.rightSideBox{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.rightSideBox .companyName{
+    font-size: 3vh;
+    font-weight: 600;    
+}

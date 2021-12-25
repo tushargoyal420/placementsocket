@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import firebase from '../../../firebase/firebase';
-import '../../../css/GetPersonalDetails.css'
+import firebase from '../../../../firebase/firebase';
+import '../../../../css/GetPersonalDetails.css'
 
 function GetSeniorSecondaryDetails() {
     const userId = firebase.auth().currentUser.uid;

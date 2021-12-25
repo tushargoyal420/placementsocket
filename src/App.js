@@ -6,12 +6,15 @@ import ProtectedRoute from "./component/protected/route/ProtectedRoute";
 import PublicRoute from "./component/protected/route/PublicRoute";
 import Footer from "./component/footer/Footer";
 import "./css/Responsive.css";
+import ScrollToTop from "./component/small/ScrollToTop";
 
 function App(props) {
   const { currentUser } = useContext(AuthContext);
 
   return (
     <div>
+      <ScrollToTop/>
+
       {currentUser ? (
         <Switch>
           <Route path="/" component={ProtectedRoute} />

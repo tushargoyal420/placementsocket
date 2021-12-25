@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Button from '@mui/material/Button';
 import { MenuItem, TextField } from '@mui/material'
-import firebase from '../../../firebase/firebase'
+import firebase from '../../../../firebase/firebase'
 
 function AddTechnicalSkills() {
     const [skill, setSkill] = useState('')
@@ -99,7 +99,6 @@ function AddTechnicalSkills() {
             .once('value').then((snapshot) => {
                 const dataList = []
                 snapshot.forEach((childSnapshot) => {
-                    // console.log(childSnapshot.key)
                     dataList.push(childSnapshot.val())
                 })
                 setData(dataList);

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Button from '@mui/material/Button';
 import { MenuItem, TextField } from '@mui/material'
-import firebase from '../../../../firebase/firebase'
+import firebase from '../../../../../firebase/firebase'
 
 
 function AddSecondaryDetails() {

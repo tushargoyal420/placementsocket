@@ -1,20 +1,26 @@
-import { Button } from "bootstrap";
-import React, { useState } from "react";
+import React from 'react'
 
 function PopUp() {
-    // const [pop, setPop] = useState(false);
 
-    const close = (()=>{
-        // setPop(false);
+    const popUp = (() => {
+        // setPop(true)
     })
+    const close = (() => {
+        // setPop(false)
+    })
+
     return (
         <div className="forPopUp">
             <div className="popUp">
-                Hlo this is pop Up
+                <div className="closeButtonBox">
+                    Close
+                    {/* <Button className="closeButton" variant="contained" onClick={close}> X </Button> */}
+                </div>
+                <div className="submitButtonBox">
+                    Button
+                </div>
             </div>
-            {/* <Button onClick={close}> Click</Button> */}
-        </div>
-    )
+        </div>)
 }
 
 export default PopUp

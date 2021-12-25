@@ -6,7 +6,7 @@ export const AuthContext = React.createContext();
 function loadingTimer(setLoading) {
   setTimeout(() => setLoading(false)
     , 2);
-    // , 2000);
+  // , 2000);
 }
 
 export const AuthProvider = ({ children }) => {
@@ -19,12 +19,13 @@ export const AuthProvider = ({ children }) => {
     });
   }, []);
   if (loading) {
-    // return <p>Loading...</p>;
     return <LoadingPage />;
   }
+  
   return (
-    <AuthContext.Provider value={{ currentUser }}>
-      {children}
-    </AuthContext.Provider>
-  );
+    <>
+      <AuthContext.Provider value={{ currentUser }}>
+        {children}
+      </AuthContext.Provider>
+    </>);
 };

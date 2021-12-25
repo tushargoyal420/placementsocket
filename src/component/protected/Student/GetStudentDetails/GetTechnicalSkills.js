@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import firebase from '../../../firebase/firebase'
+import firebase from '../../../../firebase/firebase'
 
 function GetTechnicalSkills(props) {
     const userId = firebase.auth().currentUser.uid;
@@ -24,9 +24,9 @@ function GetTechnicalSkills(props) {
                 <>
                     {data.map((single, index) => (
                         <>
-                            <ul className="getDetails">
+                            <ul className="getDetails" key={index}>
                                 <li>
-                                    <span className="key"> {single.Skill} : </span>
+                                    <span className="key" > {single.Skill} : </span>
                                     <span className="value"> {single.Proficiency} </span>
                                 </li>
                             </ul>

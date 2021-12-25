@@ -44,7 +44,13 @@ function Signup() {
                                     'id': userId,
                                     'email': email,
                                     'time': timeStamp
+                                }).then(() => {
+                                    firebase.database().ref("data").child('student/' + userId + '/profileImage').set({
+                                        'companyImage': 'NotUploaded',
+                                        "timeStamp": timeStamp
+                                    }).catch((err) => (alert(err)))
                                 })
+                                    .catch((err) => (alert(err)))
                             ) :
                             personType === 'company' ?
                                 (
@@ -52,18 +58,36 @@ function Signup() {
                                         'Id': userId,
                                         'email': email,
                                         'time': timeStamp
+                                    }).then(() => {
+                                        firebase.database().ref("data").child('company/' + userId + '/companyImage').set({
+                                            'companyImage': 'NotUploaded',
+                                            "timeStamp": timeStamp
+                                        }).catch((err) => (alert(err)))
                                     })
                                 ) :
-                                (
-                                    firebase.database().ref("user").child("college").child(userId).set({
-                                        'Id': userId,
-                                        'email': email,
-                                        'time': timeStamp
-                                    })
-                                )
-                        setCurrentUser(true)
+                                personType === 'college' ?
+                                    (
+                                        firebase.database().ref("user").child("college").child(userId).set({
+                                            'Id': userId,
+                                            'email': email,
+                                            'time': timeStamp
+                                        }).then(() => {
+                                            firebase.database().ref("data").child('college/' + userId + '/CollegeImage').set({
+                                                'companyImage': 'NotUploaded',
+                                                "timeStamp": timeStamp
+                                            }).catch((err) => (alert(err)))
+                                        }).catch((err) => (alert(err)))
+                                    ) :
+                                    (
+                                        setShowError("Please select user type")
+                                    )
 
+                        firebase.database().ref("typeList").child(userId).set({
+                            'type': personType,
+                        })
+                        setCurrentUser(true)
                     }
+
                 }).catch((err) => {
                     // alert(err);
                     setShowError(err.message);
@@ -82,25 +106,25 @@ function Signup() {
 
     return (
         <div className="sigiInUpform">
-            <form className="form signin">
+            <form className="form signin" onSubmit={submitData}>
                 <div className="formHeading"> Sign <span className="colorChange"> Up </span> </div>
-                <FormControl className="formcontrol">
+                <FormControl className="formcontrol" required>
                     <InputLabel className="inputlabel"> Enter Email </InputLabel>
                     <Input className="input" type="email" required onChange={(e) => setEmail(e.target.value)} />
                 </FormControl>
-                <FormControl className="formcontrol">
+                <FormControl className="formcontrol" required>
                     <InputLabel className="inputlabel"> Enter Password </InputLabel>
                     <Input className="input" type="password" required onChange={event => setPassword(event.target.value)} />
                 </FormControl>
-                <FormControl component="fieldset">
+                <FormControl component="fieldset" >
                     {/* <FormLabel component="legend">Gender</FormLabel> */}
-                    <RadioGroup onChange={event => setPersonType(event.target.value)} row aria-label="gender" name="row-radio-buttons-group">
-                        <FormControlLabel value="student" control={<Radio />} label="Student" />
-                        <FormControlLabel value="company" control={<Radio />} label="Company" />
-                        <FormControlLabel value="college" control={<Radio />} label="College" />
+                    <RadioGroup onChange={event => setPersonType(event.target.value)} required="true" row aria-label="gender" name="row-radio-buttons-group">
+                        <FormControlLabel value="student" control={<Radio required={true} />} label="Student" />
+                        <FormControlLabel value="company" control={<Radio required={true} />} label="Company" />
+                        <FormControlLabel value="college" control={<Radio required={true} />} label="College" />
                     </RadioGroup>
                 </FormControl>
-                <Button style={butStyle} className='submitButton' variant="contained" onClick={submitData}>Submit</Button>
+                <Button style={butStyle} className='submitButton' type="submit" variant="contained">Submit</Button>
                 <div className="formNavigation">
                     <span className="comentLine">Already have an account? </span>
                     <span className="navigationLinkOuter">

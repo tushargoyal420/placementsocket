@@ -1,5 +1,9 @@
-
-
+.getDetails .buttons{
+    display: flex;
+    padding: 5px 0px;
+    width: 100%;
+    justify-content: space-between;
+}
 .getDetails .key {
     font-weight: 600;
     padding-right: 10px;

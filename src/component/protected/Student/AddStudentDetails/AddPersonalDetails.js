@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { MenuItem, TextField } from '@mui/material'
-import '../../../css/AddDetails.css'
 import Button from '@mui/material/Button';
-import firebase from '../../../firebase/firebase'
+import '../../../../css/AddDetails.css'
+import firebase from '../../../../firebase/firebase'
 
 function AddPersonalDetails() {
     const genderArray = [
