@@ -1,8 +1,5 @@
-import React, {
-    useState
-    // , useContext 
-} from 'react'
-import { FormControl, Input, InputLabel,  } from '@mui/material';
+import React, {useState} from 'react'
+import { FormControl, Input, InputLabel, } from '@mui/material';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
@@ -12,7 +9,6 @@ import "../../css/Signup.css"
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
-
 
 function toHide(setShowError) {
     setTimeout(() => setShowError(''), 4000);
@@ -52,7 +48,7 @@ function Signin() {
     if (currentUser) {
         return <Redirect to="/" />;
     }
-   
+
     return (
         <div className="sigiInUpform">
             <form className="form" onSubmit={submitData}>
@@ -60,7 +56,7 @@ function Signin() {
 
                 <FormControl className="formcontrol" required="true">
                     <InputLabel className="inputlabel"  > Enter Email </InputLabel>
-                    <Input className="input"required onChange={(e) => setEmail(e.target.value)} />
+                    <Input className="input" required onChange={(e) => setEmail(e.target.value)} />
                 </FormControl>
                 <FormControl className="formcontrol" required="true">
                     <InputLabel className="inputlabel"> Enter Password </InputLabel>

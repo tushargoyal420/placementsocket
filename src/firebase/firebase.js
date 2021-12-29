@@ -2,8 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth'
 import 'firebase/database'
 
-
-
+//firebase connection with application
 const firebaseConfig = {
     apiKey: "AIzaSyCOvSZJCmjHfYawd7Efi05h59wgKhFQ1v4",
     authDomain: "placementsocket-5d51c.firebaseapp.com",
@@ -16,8 +15,4 @@ const firebaseConfig = {
   };
 	
 firebase.initializeApp(firebaseConfig);
-// const database = firebase.database();
-
-// export const database = firebase.database;
-// export const auth = myApp.auth();
 export default firebase;

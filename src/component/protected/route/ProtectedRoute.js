@@ -15,6 +15,11 @@ import firebase from '../../../firebase/firebase';
 import CompanyProfile from '../CompanyProfile';
 import CollegeProfile from '../CollegeProfile';
 import ApplyForCompany from '../ApplyForCompany'
+import StudentStatus from '../Student/StudentStatus';
+import ApplicationDetails from '../Student/ApplicationDetails';
+import CheckJobProfilesStatus from '../Company/CheckJobProfilesStatus';
+import ParticularstudentProfile from '../Company/ParticularstudentProfile';
+import AllDetails from '../AllDetails';
 
 function ProtectedRoute() {
     const [currentUserType, setCurrentUserType] = useState('')
@@ -45,15 +50,21 @@ function ProtectedRoute() {
                     <>
                         <Route exact path="/profile" component={StudentProfile} />
                         <Route exact path="/apply" component={ApplyForCompany} />
+                        <Route exact path="/status" component={StudentStatus} />
+                        <Route exact path="/ApplicationDetails" component={ApplicationDetails} />
                     </>
                 ) :
                     currentUserType === "company" ?
                         (
-                            <Route exact path="/profile" component={CompanyProfile} />
+                            <>
+                                <Route exact path="/profile" component={CompanyProfile} />
+                                <Route exact path="/checkStatus" component={CheckJobProfilesStatus} />
+                                <Route exact path="/particularstudentProfile" component={ParticularstudentProfile} />
+                            </>
                         ) :
                         currentUserType === "college" ? (
-                            <Route exact path="/profile" component={CollegeProfile} />
-                        ) : (
+                            <Route exact path="/allDetails" component={AllDetails} />
+                            ) : (
                             <></>
                         )
                 }

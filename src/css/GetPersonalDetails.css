@@ -39,7 +39,12 @@
     width: 100%;
     justify-content: space-between;
 }
-
+.thirdBox{
+    padding: 20px 0px 0px 0px;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
 .percentage {
     font-size: 3vh;
     font-weight: 600;

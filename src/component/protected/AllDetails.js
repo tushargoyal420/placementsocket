@@ -1,11 +1,11 @@
 import React from 'react'
 
-function StuHome() {
+function AllDetails() {
     return (
         <div>
-            this is for only stu
+            
         </div>
     )
 }
 
-export default StuHome
+export default AllDetails

@@ -1,29 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import firebase from '../../firebase/firebase.js'
+import firebase from '../../../firebase/firebase'
 import Button from '@mui/material/Button';
 
-function ApplyForCompany(props) {
+function ApplicationDetails() {
+    const [data, setData] = useState([]);
+    const timeStamp = Date();
     const userId = firebase.auth().currentUser.uid;
 
-    const LocalKey = localStorage.getItem('CurrentKey')  // "abc"
-
+    const LocalKey = localStorage.getItem('ApplicationId')
     const [gettingKey, setgettingKey] = useState(LocalKey)
-    const CurrentKey = gettingKey.replace(/['"]+/g, '');  //abc
-        
+    const CurrentKey = gettingKey.replace(/['"]+/g, '');
 
-
-    const [data, setData] = useState([]);
-    const [button, setButton] = useState(true)
-    const [deletedText, setDeletedText] = useState(false)
-    const [buttonText, setButtonText] = useState("Submit")
-    const [companyId, setCompanyId] = useState();
-
-    // students details
-    const [studentDetails, setStudentDetails] = useState([]);
-    const [graduation, setGraduation] = useState([]);
-    const [secondary, setSecondary] = useState([]);
-    const [seniorSecondary, setSeniorSecondary] = useState([]);
-    const timeStamp = Date();
+    const LocalCompanyKey = localStorage.getItem('ApplicationCompanyId')
+    const [gettingCompanyKey, setgettingCompanyKey] = useState(LocalCompanyKey)
+    const CurrentCompanyKey = gettingCompanyKey.replace(/['"]+/g, '');
 
     useEffect(() => {
         const keyy = []
@@ -35,112 +25,24 @@ function ApplyForCompany(props) {
                         keyy.push(eachComapny.key)
                     }
                 })
-                setCompanyId(keyy[0])
             })
         }).catch((err) => {
             alert(err)
         })
     }, []);
-    useEffect(() => {
-        firebase.database().ref('data').child('student').child(userId).child('personalDetails')
-            .once('value').then((snapshot) => {
-                setStudentDetails(snapshot.val());
-            }).catch((err) => {
-                alert("Graduation data is not available")
-            })
-        firebase.database().ref('data').child('student').child(userId).child('educationDetails/graduation')
-            .once('value').then((snapshot) => {
-                setGraduation(snapshot.val());
-            }).catch((err) => {
-                alert("Graduation data is not available")
-            })
-        firebase.database().ref('data').child('student').child(userId).child('educationDetails/secondary')
-            .once('value').then((snapshot) => {
-                setSecondary(snapshot.val());
-            }).catch((err) => {
-                alert("Secondary data is not available")
-            })
-        firebase.database().ref('data').child('student').child(userId).child('educationDetails/seniorSecondary')
-            .once('value').then((snapshot) => {
-                setSeniorSecondary(snapshot.val());
-            }).catch((err) => {
-                alert("Senior Secondary data is not available")
-            })
-    }, [])
-    useEffect(() => {
+    const deleteBut = () => {
         try {
-            firebase.database().ref('data/company/' + companyId + "/jobProfiles/" + CurrentKey + "/Students").on('value', (snapshot) => {
-                if (snapshot.child(userId).exists()) {
-                    const status = snapshot.child(userId).child('Status').val()
-                    const deletedTime = snapshot.child(userId).child('Deleted_TimeStamp').val()
-                    if (status === "Deleted") {
-                        setButton(true)
-                        setButtonText("Submit again")
-                        setDeletedText(true)
-                        setDeletedText("You deleted this application on " + deletedTime)
-                    } if (status === "Applied") {
-                        setButton(false)
-                        setButtonText("You already Applied")
-                    } if (status === "Shorlisted") {
-                        setButton(false)
-                        setButtonText("You already Shortlisted")
-                    } if (status === "Not Shorlist") {
-                        setButton(false)
-                        setButtonText("Sorry you are not shorlist")
-                    }else{
-                        setButton(false)
-                        setButtonText(status)
-                    }
-                }
-            })
+            firebase.database().ref("data").child('company/' + CurrentCompanyKey + "/jobProfiles/" + CurrentKey + "/Students")
+                .child(userId).update({
+                    "Status": "Deleted",
+                    "Deleted_TimeStamp": timeStamp
+                }).catch((err) => (
+                    alert(err.message)
+                ))
         } catch (e) {
             alert(e.message)
         }
-    })
-
-    const submit = (() => {
-        const errorList = []
-        try {
-            if (secondary.Percentage < data.s_percentage) {
-                errorList.push("Secondary Percentage doesn't match the criteria. \n")
-            } if (seniorSecondary.Percentage < data.ss_percentage) {
-                errorList.push("Senior Secondary Percentage doesn't match the criteria. \n")
-            } if (graduation.Percentage < data.ugPerc) {
-                errorList.push("Graduation Percentage doesn't match the criteria. \n")
-            } if (!(graduation.Ending_Year === data.passingOut)) {
-                errorList.push("Graduation passing out year doesn't match the criteria. \n")
-            } if (!(graduation.Backlogs === data.active_backlogs)) {
-                errorList.push("Backlogs doesn't match the criteria. \n")
-            }
-        } catch (error) {
-            alert(error.message)
-        }
-
-        if (errorList.length) {
-            alert(errorList)
-        } else {
-            try {
-                firebase.database().ref("data").child('company/' + companyId + "/jobProfiles/" + CurrentKey + "/Students")
-                    .child(userId).update({
-                        "StudentId": userId,
-                        "Student_SapId": studentDetails.SapId,
-                        "Student_Name": studentDetails.Name,
-                        "Student_Email": studentDetails.Email_address,
-                        "Student_Personal_Email": studentDetails.Personal_email_address,
-                        "Student_Contact_Number": studentDetails.Mobile_number,
-                        "Student_Alternate_Contact_Number": studentDetails.Alternate_mobile_number,
-                        "Status": "Applied",
-                        "TimeStamp": timeStamp,
-                    }).catch((err) => (
-                        alert(err.message)
-                    ))
-            } catch (e) {
-                alert(e.message)
-            }
-
-        }
-    })
-
+    }
     return (
         <div className="backgroundPage">
             <div className="centerWholePage">
@@ -224,30 +126,16 @@ function ApplyForCompany(props) {
                                     </section>
                                 </div>
                             </ul>
+                            <Button className="closeButton" variant="contained" id="sUbbutton" onClick={deleteBut} > Delete</Button>
                         </>
 
                     ) : (
                         <p>Failed to load</p>
                     )
                 }
-                {
-                    (button) ? (
-                        <>
-                            {(deletedText) ? (
-                                <p className="deletedMessage">Note: {deletedText}</p>
-
-                            ) : (
-                                <> </>
-                            )
-                            }
-                            <Button className="closeButton" variant="contained" id="sUbbutton" onClick={submit}> {buttonText}</Button>
-                        </>
-                    ) : (
-                        <Button className="closeButton" variant="contained" id="sUbbutton" onClick={submit} disabled>{buttonText}</Button>
-                    )}
             </div>
         </div>
     )
 }
 
-export default ApplyForCompany
+export default ApplicationDetails

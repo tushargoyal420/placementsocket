@@ -27,7 +27,7 @@ function Signup() {
     const [showError, setShowError] = useState("");
     const [currentUser, setCurrentUser] = useState(null);
     const [personType, setPersonType] = useState("");
-    // const userId = ""
+
     const submitData = (event) => {
         setShowError('')
         event.preventDefault();

@@ -1,8 +1,9 @@
 import React from 'react'
 import "../../css/About.css"
 import ImageWithName from '../small/ImageWithName'
-import pic1 from "../../img/image.png"
-import pic2 from "../../img/mypic.JPG"
+import pic1 from "../../img/dheeraj.jpeg"
+import pic2 from "../../img/harsh.jpg"
+import pic3 from "../../img/munnuu.jpeg"
 import GoogleMap from '../small/GoogleMap'
 
 function About() {
@@ -25,9 +26,9 @@ function About() {
                             <li><h1 className="heading1"> Founders </h1> </li>
                             <div className="rowsectionContent">
                                 <ul className="founderUnorderList">
-                                    <li>  <ImageWithName firstName="Tushar" lastName="Goyal" image={pic1} alt="harshImage" designation="Founder" /></li>
-                                    <li>  <ImageWithName firstName="Chintu" lastName="Goyal" image={pic2} alt="harshImage" designation="Founder" /></li>
-                                    <li>  <ImageWithName firstName="Tushar" lastName="Goyal" image={pic1} alt="harshImage" designation="Founder" /></li>
+                                    <li>  <ImageWithName firstName="Dheeraj" lastName="Kumar" image={pic1} alt="dheerajImage" designation="Founder" /></li>
+                                    <li>  <ImageWithName firstName="Harsh" lastName="Raj" image={pic2} alt="harshImage" designation="Founder" /></li>
+                                    <li>  <ImageWithName firstName="Munnu" lastName="Kumar" image={pic3} alt="munnuImage" designation="Founder" /></li>
                                 </ul>
                             </div>
                         </section>

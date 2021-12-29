@@ -15,7 +15,7 @@ import GetCompanyProfile from "./Company/GetCompanyDetails/GetCompanyProfile";
 
 
 function CompanyProfile() {
-    
+
     const [imagePop, setImagePop] = useState(false);
     const popUpClose = (() => {
         setAboutPop(false)
@@ -29,13 +29,13 @@ function CompanyProfile() {
     const [aboutPop, setAboutPop] = useState(false);
     const [jobPop, setJobPop] = useState(false);
     const [socialPop, setSocialPop] = useState(false);
-    
-    function closePopupFunc(){
+
+    function closePopupFunc() {
         setAboutPop(false)
         setJobPop(false)
         setSocialPop(false)
         setImagePop(false)
-    } 
+    }
     useEffect(() => {
         try {
             const userId = firebase.auth().currentUser.uid;
@@ -148,7 +148,7 @@ function CompanyProfile() {
                             <div className="popUp">
                                 <div className="topdiv">
                                     <span className="headingText">{data.headText} </span>
-                                    <Button className= "closeButton" variant="contained" key={index} onClick={popUpClose}> X </Button>
+                                    <Button className="closeButton" variant="contained" key={index} onClick={popUpClose}> X </Button>
                                 </div>
                                 <div className="conentBox" >
                                     {data.component}
@@ -195,8 +195,8 @@ function CompanyProfile() {
                                 <div className="companyProfileImageDiv">
                                     {downloadImage ? (
                                         <div className="companyImage" style={{ backgroundImage: `url(${downloadImage})` }} >
+                                            <img src={downloadImage} alt="Loading." className="companyImage" style={{ width: '100%' }} />
                                         </div>
-                                        // <img src={downloadImage} alt="Loading." className="companyImage" style={{width:'100%' }} />
                                     ) : (
                                         <div className="companyImage">
                                             <Button onClick={imagePopUp}>  Add Image </Button>
@@ -205,7 +205,6 @@ function CompanyProfile() {
                                 </div>
                                 <div className="CompanyNameDiv">
                                     <GetCompanyProfile />
-                                    {/* Spade EMS */}
                                 </div>
                             </section>
                         </div>

@@ -166,3 +166,8 @@
     min-width: 80%;
 
 }
+.deletedMessage{
+    text-align: center;
+    color: red;
+    font-size: 2.4vh;
+}

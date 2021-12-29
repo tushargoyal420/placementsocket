@@ -14,7 +14,6 @@ function GetGraduationDetails() {
     return (
         <div>
             {(data) ? (
-
                 <div className="dataBox">
 
                     <ul className="getDetails">

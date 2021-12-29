@@ -14,7 +14,6 @@ function PopUp() {
             <div className="popUp">
                 <div className="closeButtonBox">
                     Close
-                    {/* <Button className="closeButton" variant="contained" onClick={close}> X </Button> */}
                 </div>
                 <div className="submitButtonBox">
                     Button

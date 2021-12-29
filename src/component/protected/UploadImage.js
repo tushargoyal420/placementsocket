@@ -12,8 +12,6 @@ const UploadImage = ({ toClose, onClosePopup }) => {
         setImage('')
     })
     const selectImage = e => {
-        // setImage('')
-
         if (e.target.files.length) {
             setImage({
                 preview: URL.createObjectURL(e.target.files[0]),

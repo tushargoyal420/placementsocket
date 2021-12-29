@@ -149,7 +149,6 @@ function StudentProfile() {
             <div className="backgroundPage">
                 <div className="centerWholePage">
                     <div className="centerPageHeading">Your <span className="colorChange"> Profile</span> </div>
-
                     <ul className="headingul">
                         <div className="centerPageContent" style={{ borderRadius: '0px' }}>
                             <section className="profileRowSectionOne">

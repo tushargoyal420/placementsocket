@@ -3,7 +3,7 @@ import { Redirect, Route, Switch } from 'react-router';
 import NavbarOne from '../../navbar/NavbarOne';
 import Signup from '../../pages/Signup';
 import Signin from '../../pages/Signin';
-import Home from '../../pages/Home';
+// import Home from '../../pages/Home';
 import About from '../../pages/About';
 import Contact from '../../pages/Contact';
 

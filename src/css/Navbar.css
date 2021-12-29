@@ -26,3 +26,10 @@
 #withBackgroundButton:hover{
         color: white;
 }
+#withBlueBackgroundButton{
+    margin: 0px 5px;
+    text-transform: capitalize;
+}    
+#withBlueBackgroundButton:hover{
+        color: #1976D2;
+}

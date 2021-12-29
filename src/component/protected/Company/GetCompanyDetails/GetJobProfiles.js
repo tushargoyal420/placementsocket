@@ -1,24 +1,29 @@
 import React, { useState } from 'react'
 import firebase from '../../../../firebase/firebase.js'
 import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 
 
 function GetJobProfiles() {
 
     const userId = firebase.auth().currentUser.uid;
     const [data, setData] = useState([]);
+    try {
 
-    firebase.database().ref('data/company/' + userId + '/jobProfiles')
-        .once('value').then((snapshot, index) => {
-            const dataList = []
-            snapshot.forEach((childSnapshot) => {
-                // childSnapshot;
-                dataList.push(childSnapshot.child("Details").val())
+        firebase.database().ref('data/company/' + userId + '/jobProfiles')
+            .once('value').then((snapshot, index) => {
+                const dataList = []
+                snapshot.forEach((childSnapshot) => {
+                    dataList.push(childSnapshot.child("Details").val())
+                })
+                setData(dataList);
+            }).catch((err) => {
+                alert(err)
             })
-            setData(dataList);
-        }).catch((err) => {
-            alert(err)
-        })
+
+    } catch (err) {
+        alert(err.message)
+    }
     return (
         <div>
             {(!data.length) ? (
@@ -30,10 +35,17 @@ function GetJobProfiles() {
                             <ul className="getDetails">
                                 <div className="internshipHeader">
                                     <div className="organizationName" key={single.index}>{single.job_name}</div>
-                                    <div> 
-                                        <Button variant="outlined" onClick={(() => {
+                                    <div>
+                                        <Button variant="outlined" id="withBlueBackgroundButton" onClick={(() => {
                                             firebase.database().ref('data/company/' + userId + '/jobProfiles/' + single.key).remove()
                                         })} > Delete </Button>
+                                        <Button variant="contained" style={{ marginLeft: '10px' }}
+                                            onClick={(() => (localStorage.setItem('JobCheckStatusId', JSON.stringify(single.key))))}
+                                            component={Link}
+                                            id="withBackgroundButton"
+                                            to="/checkStatus"
+
+                                        > Check status </Button>
                                     </div>
                                 </div>
                                 <li>
